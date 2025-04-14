@@ -1,3 +1,4 @@
+#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -89,7 +90,7 @@ static int set_date(char *buf, const char *string)
 	return -1;
     }
     if (strlen(string) != 19) {
-	printf("ERROR: Date strlen() != 19 -- %d\n", strlen(string));
+	printf("ERROR: Date strlen() != 19 -- %zd\n", strlen(string));
 	printf("ERROR: Bad date format (MM/DD/YYYY hh:mm:ss): %s\n", string);
 	return -1;
     }
@@ -177,7 +178,7 @@ static int set_mac(char *buf, const char *string)
 	return -1;
     }
     if (strlen(p) != 17) {
-	printf("ERROR: MAC address strlen() != 17 -- %d\n", strlen(p));
+	printf("ERROR: MAC address strlen() != 17 -- %zd\n", strlen(p));
 	printf("ERROR: Bad MAC address format: %s\n", string);
 	return -1;
     }
